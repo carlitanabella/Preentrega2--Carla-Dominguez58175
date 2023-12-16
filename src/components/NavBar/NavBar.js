@@ -1,9 +1,9 @@
 import './NavBar.css'
 import CartWidget from "../CartWidget/CartWidget"
 import Logo from "../Logotipo/Logo"
-import Breadcrumbs from '@mui/material/Breadcrumbs';
+import Breadcrumbs from '@mui/material/Breadcrumbs'
 
-import { NavLink, Link, link } from "react-router-dom";
+import { NavLink, Link } from 'react-router-dom'
 
 const NavBar = () => {
     return (
@@ -16,10 +16,10 @@ const NavBar = () => {
            
             <ul style={{display: 'flex', justifyContent: 'center', alignContent: 'center', marginRight: '200px'}}>
             <Breadcrumbs separator="/"  maxItems={2} aria-label="breadcrumb">
-                <NavLink  to={`/category/muebles`} className={({isActive}) => isActive ? 'ActiveOption' : 'Option'} underline="hover" color="inherit" href="#" style={{ listStyleType: "none" }}>Muebles</NavLink>
-                <NavLink to={`/category/blanco`} className={({isActive}) => isActive ? 'ActiveOption' : 'Option'}   underline="hover" color="inherit" href="#" style={{ listStyleType: "none" }}>Linea Blanco</NavLink>
-                <NavLink to={`/category/alfombras`} className={({isActive}) => isActive ? 'ActiveOption' : 'Option'}   underline="hover" color="inherit" href="#" style={{ listStyleType: "none" }}>Alfombras</NavLink>
-                <NavLink to={`/category/Almohadones`}  className={({isActive}) => isActive ? 'ActiveOption' : 'Option'}  underline="hover" color="inherit" href="#" style={{ listStyleType: "none" }}>Almohadones</NavLink>
+                <NavLink  to={"../category/muebles"} className={({isActive}) => isActive ? 'ActiveOption' : 'Option'} underline="hover" color="inherit" href="#" style={{ listStyleType: "none" }}>Muebles</NavLink>
+                <NavLink to={`./category/blanco`} className={({isActive}) => isActive ? 'ActiveOption' : 'Option'}   underline="hover" color="inherit" href="#" style={{ listStyleType: "none" }}>Linea Blanco</NavLink>
+                <NavLink to={`./category/alfombras`} className={({isActive}) => isActive ? 'ActiveOption' : 'Option'}   underline="hover" color="inherit" href="#" style={{ listStyleType: "none" }}>Alfombras</NavLink>
+                <NavLink to={`./category/Almohadones`}  className={({isActive}) => isActive ? 'ActiveOption' : 'Option'}  underline="hover" color="inherit" href="#" style={{ listStyleType: "none" }}>Almohadones</NavLink>
             </Breadcrumbs>
 
             

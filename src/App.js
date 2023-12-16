@@ -1,27 +1,31 @@
+import React from 'react';
+import {  BrowserRouter, Routes, Route} from 'react-router-dom';
 import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import NavBar from './components/NavBar/NavBar.js';
+import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import ItemCount from './components/ItemCount/ItemCount';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
-
+import Cart from './components/CartWidget/CartWidget';
+import { CartProvider } from './Context/CartContext';
+import Checkout from './components/CheckOut/CheckOut';
 
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
+      <CartProvider>
       <NavBar/>
       <Routes>
-        <Route path='/' elememt={< ItemListContainer />} />
-        <Route path='/category/:categoryId' elememt={< ItemListContainer />} />
-        <Route path='/item/:itemId' elememt={< ItemDetailContainer />} />
-        <Route path='*' elememt={<h1>404 not found</h1>} /> 
+        <Route path='/' Component={ ItemListContainer } />
+        <Route path='/category/:categoryId' Component={ ItemListContainer } />
+        <Route path='/item/:itemId' Component={ ItemDetailContainer } />
+        <Route path='/cart' element={Cart} />
+        <Route path='/checkout' element={Checkout} />
+        <Route path='*' Component={ <h1> 404 not found </h1> } /> 
 
       </Routes>
-      <ItemListContainer greeting={'Bienvenidos'} />
-      <ItemCount initial={1} stock={10} onAdd={(quantity) => console.log('Cantidad agregada', quantity)}/>
-      <ItemDetailContainer />
+      </CartProvider>
+ 
       </BrowserRouter>
 
 

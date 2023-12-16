@@ -1,5 +1,7 @@
-import { Link } from '@mui/material'
-import './Item.css'
+
+import './Item.css';
+import { Link } from 'react-router-dom'
+
 
 const Item = ({id, name, img, price, stock}) => {
 
@@ -25,7 +27,7 @@ const Item = ({id, name, img, price, stock}) => {
                 <Link to={`/item/${id}`} className='Option'>Ver detalle</Link>
             </footer>
         </article>
-    )
-}
+    );
+};
 
-export default Item
+export default Item;
